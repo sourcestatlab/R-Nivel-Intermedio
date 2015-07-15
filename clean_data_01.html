@@ -151,18 +151,55 @@ y &lt;- rnorm(10)
 cbind(x,y)</pre>
 
 <pre >#&gt;                x          y
-#&gt;  [1,] -2.5077397 -1.6155774
-#&gt;  [2,]  1.5301264 -0.7541763
-#&gt;  [3,]  0.2023619  1.2956710
-#&gt;  [4,] -1.6035264  0.8536164
-#&gt;  [5,]  1.2106563 -0.7079786
-#&gt;  [6,] -1.5756252  0.9441093
-#&gt;  [7,] -0.3766540  0.1329715
-#&gt;  [8,] -1.3741653  1.3088154
-#&gt;  [9,] -1.2618342 -0.5318378
-#&gt; [10,]  1.4501259  0.1768220</pre>
+#&gt;  [1,] -1.3563387 -2.0249370
+#&gt;  [2,] -0.1602881  0.3380052
+#&gt;  [3,]  1.7426882  0.3561960
+#&gt;  [4,] -0.9550218  0.3256012
+#&gt;  [5,]  1.2543901 -0.2273492
+#&gt;  [6,]  0.3655881 -1.1910793
+#&gt;  [7,] -0.7208678 -2.4035551
+#&gt;  [8,]  0.3097381 -1.9049482
+#&gt;  [9,] -0.3095470  1.3850507
+#&gt; [10,]  0.2217890  1.3410884</pre>
 
 </article></slide><slide class=''><hgroup><h2>Valores perdidos</h2></hgroup><article  id="valores-perdidos" class="smaller ">
+
+<p>En R, los valores perdidos están representados por el símbolo NA <em>(not available)</em>. Mientras que los valores imposibles tales como la división por cero están representados por el símbolo NaN <em>(not a number)</em>.</p>
+
+<pre class = 'prettyprint lang-r'>c(2, NA, 5, NaN)</pre>
+
+<pre >#&gt; [1]   2  NA   5 NaN</pre>
+
+<p>Debido a los distintos tipos de elementos que existen en R, se han creado terminologías para los datos perdidos de acuerdo al tipo de elemento, es por ello que tenemos:</p>
+
+<ul>
+<li>NA_real_</li>
+<li>NA_integer_</li>
+<li>NA_character_</li>
+<li>NA_complex_</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section" class="smaller ">
+
+<pre class = 'prettyprint lang-r'>#NA para elementos numericos
+NA_real_</pre>
+
+<pre >#&gt; [1] NA</pre>
+
+<pre class = 'prettyprint lang-r'>#NA para elementos enteros
+NA_integer_</pre>
+
+<pre >#&gt; [1] NA</pre>
+
+<pre class = 'prettyprint lang-r'>#NA para elementos caracteres
+NA_character_</pre>
+
+<pre >#&gt; [1] NA</pre>
+
+<pre class = 'prettyprint lang-r'>#NA para elementos complejos
+NA_complex_</pre>
+
+<pre >#&gt; [1] NA</pre>
 
 </article></slide><slide class=''><hgroup><h2>Valores duplicados</h2></hgroup><article  id="valores-duplicados" class="smaller ">
 
