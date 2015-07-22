@@ -150,17 +150,17 @@
 y &lt;- rnorm(10)
 cbind(x,y)</pre>
 
-<pre >#&gt;                   x           y
-#&gt;  [1,]  0.2532303844  2.39006443
-#&gt;  [2,]  1.1070288563 -0.06153997
-#&gt;  [3,]  1.2248078851  0.19446862
-#&gt;  [4,]  1.4342753042  0.52292902
-#&gt;  [5,]  0.1212360516  1.46999648
-#&gt;  [6,] -1.2145466265  0.93297487
-#&gt;  [7,] -0.0001772967  1.04351501
-#&gt;  [8,]  0.8998798683  0.45357696
-#&gt;  [9,] -0.2672252595  1.09451071
-#&gt; [10,] -0.3682725763 -0.08902052</pre>
+<pre >#&gt;                x             y
+#&gt;  [1,]  0.9902514 -0.6971011037
+#&gt;  [2,] -0.2048674 -0.3698817223
+#&gt;  [3,]  1.6300351  0.4904462598
+#&gt;  [4,]  1.2637830  0.0006816504
+#&gt;  [5,] -0.2055442  0.9781797089
+#&gt;  [6,]  0.4211169 -0.7811790983
+#&gt;  [7,] -0.7177075 -0.6497882327
+#&gt;  [8,] -0.4635929 -0.0624068806
+#&gt;  [9,]  1.1384271  0.3588802911
+#&gt; [10,] -0.1081151 -0.2211410361</pre>
 
 </article></slide><slide class=''><hgroup><h2>Valores perdidos</h2></hgroup><article  id="valores-perdidos" class="smaller ">
 
@@ -212,7 +212,95 @@ typeof(vec)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Fechas</h2></hgroup><article  id="fechas" class="smaller ">
 
-</article></slide><slide class=''><hgroup><h2>Manipulación de caractéres</h2></hgroup><article  id="manipulacion-de-caracteres" class="smaller ">
+</article></slide><slide class=''><hgroup><h2>Manipulación de caractéres</h2></hgroup><article  id="manipulacion-de-caracteres" class="smaller build">
+
+<p>Es muy probable que en su vida profesional se encuentre con algún conjunto de datos que contiene información sobre: nombres, números de teléfono, fechas, cantidades monetarias, coordenadas, etc.</p>
+
+<p align="center">
+
+<img src="data:image/jpeg;base64,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" border="0" width="240" height="190">
+
+</p>
+
+<p>Además, que se desee:</p>
+
+<ul>
+<li>Eliminar un caracter especial</li>
+<li>Reemplazar algún caracter determinado</li>
+<li>Convertir las etiquetas en mayúsculas (o minúsculas)</li>
+</ul>
+
+<p>Gran cantidad de personas modifican sus archivos de texto en Excel realizando miles de <code>Ctrl+C</code> &amp; <code>Ctrl+V</code>.</p>
+
+</article></slide><slide class=''><hgroup><h2>Abreviación de cadenas</h2></hgroup><article  id="abreviacion-de-cadenas" class="smaller build">
+
+<p>Para iniciarnos en el tema consideraremos una base <code>USArrests</code> de ratios de violencia (asaltos, asesinatos, etc.) dentro de EEUU:</p>
+
+<pre class = 'prettyprint lang-r'>head(USArrests)</pre>
+
+<pre >#&gt;            Murder Assault UrbanPop Rape
+#&gt; Alabama      13.2     236       58 21.2
+#&gt; Alaska       10.0     263       48 44.5
+#&gt; Arizona       8.1     294       80 31.0
+#&gt; Arkansas      8.8     190       50 19.5
+#&gt; California    9.0     276       91 40.6
+#&gt; Colorado      7.9     204       78 38.7</pre>
+
+<p>Almacenemos los nombres de los <strong>Estados</strong> en la variable `states.</p>
+
+<pre class = 'prettyprint lang-r'>states &lt;- rownames(USArrests)
+head(states)</pre>
+
+<pre >#&gt; [1] &quot;Alabama&quot;    &quot;Alaska&quot;     &quot;Arizona&quot;    &quot;Arkansas&quot;   &quot;California&quot;
+#&gt; [6] &quot;Colorado&quot;</pre>
+
+</article></slide><slide class=''><hgroup><h2>Abreviación de cadenas</h2></hgroup><article  id="abreviacion-de-cadenas-1" class="smaller build">
+
+<p>Supongamos que queremos abreviar los nombres de los <strong>Estados</strong> utilizando únicamente los cuatro primero caracteres.</p>
+
+<pre class = 'prettyprint lang-r'>substr(x = states, start = 1, stop = 4)</pre>
+
+<pre >#&gt;  [1] &quot;Alab&quot; &quot;Alas&quot; &quot;Ariz&quot; &quot;Arka&quot; &quot;Cali&quot; &quot;Colo&quot; &quot;Conn&quot; &quot;Dela&quot; &quot;Flor&quot; &quot;Geor&quot;
+#&gt; [11] &quot;Hawa&quot; &quot;Idah&quot; &quot;Illi&quot; &quot;Indi&quot; &quot;Iowa&quot; &quot;Kans&quot; &quot;Kent&quot; &quot;Loui&quot; &quot;Main&quot; &quot;Mary&quot;
+#&gt; [21] &quot;Mass&quot; &quot;Mich&quot; &quot;Minn&quot; &quot;Miss&quot; &quot;Miss&quot; &quot;Mont&quot; &quot;Nebr&quot; &quot;Neva&quot; &quot;New &quot; &quot;New &quot;
+#&gt; [31] &quot;New &quot; &quot;New &quot; &quot;Nort&quot; &quot;Nort&quot; &quot;Ohio&quot; &quot;Okla&quot; &quot;Oreg&quot; &quot;Penn&quot; &quot;Rhod&quot; &quot;Sout&quot;
+#&gt; [41] &quot;Sout&quot; &quot;Tenn&quot; &quot;Texa&quot; &quot;Utah&quot; &quot;Verm&quot; &quot;Virg&quot; &quot;Wash&quot; &quot;West&quot; &quot;Wisc&quot; &quot;Wyom&quot;</pre>
+
+<h3>¿La solución es buena?</h3>
+
+<p>Posiblemente no, pues notemos que hay 4 estados con igual abreviatura: <code>&quot;New &quot;</code>.</p>
+
+<p>Una mejor manera de abreviar los nombres puede ser mediante la función <code>abbreviate()</code>.</p>
+
+</article></slide><slide class=''><hgroup><h2>Abreviación de cadenas</h2></hgroup><article  id="abreviacion-de-cadenas-2" class="smaller build">
+
+<pre class = 'prettyprint lang-r'>states2 &lt;- abbreviate(states)
+states2</pre>
+
+<pre >#&gt;        Alabama         Alaska        Arizona       Arkansas     California 
+#&gt;         &quot;Albm&quot;         &quot;Alsk&quot;         &quot;Arzn&quot;         &quot;Arkn&quot;         &quot;Clfr&quot; 
+#&gt;       Colorado    Connecticut       Delaware        Florida        Georgia 
+#&gt;         &quot;Clrd&quot;         &quot;Cnnc&quot;         &quot;Dlwr&quot;         &quot;Flrd&quot;         &quot;Gerg&quot; 
+#&gt;         Hawaii          Idaho       Illinois        Indiana           Iowa 
+#&gt;         &quot;Hawa&quot;         &quot;Idah&quot;         &quot;Illn&quot;         &quot;Indn&quot;         &quot;Iowa&quot; 
+#&gt;         Kansas       Kentucky      Louisiana          Maine       Maryland 
+#&gt;         &quot;Knss&quot;         &quot;Kntc&quot;         &quot;Losn&quot;         &quot;Main&quot;         &quot;Mryl&quot; 
+#&gt;  Massachusetts       Michigan      Minnesota    Mississippi       Missouri 
+#&gt;         &quot;Mssc&quot;         &quot;Mchg&quot;         &quot;Mnns&quot;         &quot;Msss&quot;         &quot;Mssr&quot; 
+#&gt;        Montana       Nebraska         Nevada  New Hampshire     New Jersey 
+#&gt;         &quot;Mntn&quot;         &quot;Nbrs&quot;         &quot;Nevd&quot;         &quot;NwHm&quot;         &quot;NwJr&quot; 
+#&gt;     New Mexico       New York North Carolina   North Dakota           Ohio 
+#&gt;         &quot;NwMx&quot;         &quot;NwYr&quot;         &quot;NrtC&quot;         &quot;NrtD&quot;         &quot;Ohio&quot; 
+#&gt;       Oklahoma         Oregon   Pennsylvania   Rhode Island South Carolina 
+#&gt;         &quot;Oklh&quot;         &quot;Orgn&quot;         &quot;Pnns&quot;         &quot;RhdI&quot;         &quot;SthC&quot; 
+#&gt;   South Dakota      Tennessee          Texas           Utah        Vermont 
+#&gt;         &quot;SthD&quot;         &quot;Tnns&quot;         &quot;Texs&quot;         &quot;Utah&quot;         &quot;Vrmn&quot; 
+#&gt;       Virginia     Washington  West Virginia      Wisconsin        Wyoming 
+#&gt;         &quot;Vrgn&quot;         &quot;Wshn&quot;         &quot;WstV&quot;         &quot;Wscn&quot;         &quot;Wymn&quot;</pre>
+
+<p>Así que siéntase afortunado hoy dado que en esta clase usted va adquirir una gran caja de herramientas para hacer frente a estas y otras situaciones que impliquen trabajar con cadenas.</p>
+
+<p>El procesamiento de <strong>cadenas</strong> es <em>abstracto</em> y <em>aburrido</em> pero con frecuencia se presenta en la etapa de limpieza y preparación de información. Para alivianar este trabajo proponemos usar el paquete <code>stringr</code>, mismo que ofrece funciones simples y consistentes para remediar los problemas que se puedan presentar al momento de trabajar con cadenas.</p>
 
 </article></slide><slide class=''><hgroup><h2>Preguntas</h2></hgroup><article  id="preguntas" class="smaller ">
 
