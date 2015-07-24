@@ -567,6 +567,42 @@ dres</pre>
 #&gt; [1,]    0    1    1    1
 #&gt; [2,]    0    1    2    3</pre>
 
+</article></slide><slide class=''><hgroup><h2>La función merge</h2></hgroup><article  id="la-funcion-merge" class="smaller ">
+
+<p>Para fusionar dos bases de datos que tiene un común al menos una columna <strong>(key)</strong> usaremos la función <code>merge</code>.</p>
+
+<pre class = 'prettyprint lang-r'>A &lt;- data.frame(letter=LETTERS[1:4], a=1:4)
+B &lt;- data.frame(letter=LETTERS[sample(6)], x=runif(6))
+merge(A, B)</pre>
+
+<pre >#&gt;   letter a         x
+#&gt; 1      A 1 0.7652455
+#&gt; 2      B 2 0.0430196
+#&gt; 3      C 3 0.1586767
+#&gt; 4      D 4 0.2512855</pre>
+
+<pre class = 'prettyprint lang-r'>merge(A, B, all=TRUE)</pre>
+
+<pre >#&gt;   letter  a         x
+#&gt; 1      A  1 0.7652455
+#&gt; 2      B  2 0.0430196
+#&gt; 3      C  3 0.1586767
+#&gt; 4      D  4 0.2512855
+#&gt; 5      E NA 0.1911895
+#&gt; 6      F NA 0.6245727</pre>
+
+</article></slide><slide class=''><hgroup><h2>La función match</h2></hgroup><article  id="la-funcion-match" class="smaller ">
+
+<p>Para identificar elementos comúnes entre dos bases podemos usar la función <code>match</code>.</p>
+
+<pre class = 'prettyprint lang-r'>match(c(&quot;B&quot;, &quot;E&quot;), LETTERS)</pre>
+
+<pre >#&gt; [1] 2 5</pre>
+
+<pre class = 'prettyprint lang-r'>match(c(&quot;B&quot;, &quot;3&quot;, &quot;E&quot;), LETTERS)</pre>
+
+<pre >#&gt; [1]  2 NA  5</pre>
+
 </article></slide><slide class=''><hgroup><h2>Valores perdidos</h2></hgroup><article  id="valores-perdidos" class="smaller ">
 
 <p>En R, los valores perdidos están representados por el símbolo NA <em>(not available)</em>. Mientras que los valores imposibles tales como la división por cero están representados por el símbolo NaN <em>(not a number)</em>.</p>
