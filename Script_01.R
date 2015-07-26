@@ -221,14 +221,14 @@ muestra[duplicated(muestra)]
 
 
 ### Muestreo / Modelamiento /validacion
-
+# Solucion 1
 nmod <- ceiling(0.7*nrow(sdata))
 id_muestra <- sample(sdata$identificacion, size=nmod, replace=FALSE)
 sdata$muestra <- ifelse(sdata$identificacion %in% id_muestra, "modelamiento", "validacion")
 head(sdata)
 round(prop.table(table(sdata$muestra)),2)
 
-
+# Solucion 2
 id <- sample(1:nrow(sdata), size=ceiling(0.7*nrow(sdata)), replace=FALSE)
 df1 <- data.frame(sdata[id,], muestra="modelamiento")
 id_val <- setdiff(1:nrow(sdata),id)
