@@ -619,20 +619,20 @@ B &lt;- data.frame(letter=LETTERS[sample(6)], x=runif(6))
 merge(A, B)</pre>
 
 <pre >#&gt;   letter a         x
-#&gt; 1      A 1 0.2980967
-#&gt; 2      B 2 0.3254125
-#&gt; 3      C 3 0.6956395
-#&gt; 4      D 4 0.1784256</pre>
+#&gt; 1      A 1 0.6368589
+#&gt; 2      B 2 0.3169576
+#&gt; 3      C 3 0.5923920
+#&gt; 4      D 4 0.1110616</pre>
 
 <pre class = 'prettyprint lang-r'>merge(A, B, all=TRUE)</pre>
 
 <pre >#&gt;   letter  a         x
-#&gt; 1      A  1 0.2980967
-#&gt; 2      B  2 0.3254125
-#&gt; 3      C  3 0.6956395
-#&gt; 4      D  4 0.1784256
-#&gt; 5      E NA 0.1135030
-#&gt; 6      F NA 0.4395027</pre>
+#&gt; 1      A  1 0.6368589
+#&gt; 2      B  2 0.3169576
+#&gt; 3      C  3 0.5923920
+#&gt; 4      D  4 0.1110616
+#&gt; 5      E NA 0.8328797
+#&gt; 6      F NA 0.2511209</pre>
 
 </article></slide><slide class=''><hgroup><h2>La función merge</h2></hgroup><article  id="la-funcion-merge-1" class="smaller build">
 
@@ -950,13 +950,13 @@ table(cortes2)</pre>
 
 <pre class = 'prettyprint lang-r'>sample(c(3,5,7,8), size=3)</pre>
 
-<pre >#&gt; [1] 8 7 5</pre>
+<pre >#&gt; [1] 5 7 8</pre>
 
 <p>Se puede dar mayor peso a un grupo de observaciones mediante el parámetro <code>prob</code>.</p>
 
 <pre class = 'prettyprint lang-r'>sample(c(3,5,7,8), size=3, prob=c(0.1, 0.2, 0.3, 0.4))</pre>
 
-<pre >#&gt; [1] 8 3 7</pre>
+<pre >#&gt; [1] 7 8 5</pre>
 
 </article></slide><slide class=''><hgroup><h2>Muestras aleatorias</h2></hgroup><article  id="muestras-aleatorias-1" class="smaller build">
 
@@ -965,10 +965,10 @@ table(cortes2)</pre>
 <pre class = 'prettyprint lang-r'>muestra &lt;- sample(1:300, size=60, replace=FALSE)
 muestra</pre>
 
-<pre >#&gt;  [1]   9  75 176 114 128 159  37 175  82 173 258 190  25 157 136 286  97
-#&gt; [18] 126 180  27  23  72 104  96 296 184  28 276 105 272   8 253 144 186
-#&gt; [35] 102 155 170  47 185   7 270 165 239 103 125 124   6 119   5  12 275
-#&gt; [52] 158 201 200 300 288 131  42 246 227</pre>
+<pre >#&gt;  [1] 188 230 182 248   3  24  23 279 287  62  25  63  47 241  95  11 280
+#&gt; [18] 145 206 244 189 228 257 120  94  58 137  71 250 281 134  65 299 180
+#&gt; [35]  31 177  56 288  20 239  12   7  81 266 237  43  54 169 176  66 252
+#&gt; [52]  97 260  50 214  16  15  17 265 226</pre>
 
 <pre class = 'prettyprint lang-r'>sum(duplicated(muestra))</pre>
 
@@ -985,10 +985,10 @@ muestra</pre>
 <pre class = 'prettyprint lang-r'>muestra &lt;- sample(1:300, size=60, replace=TRUE)
 muestra</pre>
 
-<pre >#&gt;  [1] 293 279 228 140 130 253 104  10 283  82 166 295 238  74   1 207  18
-#&gt; [18] 142 243 222 250  52  82 278  19  77 110 191 120 275  64  92 163  27
-#&gt; [35] 191 191  65  42  73   1 151  85 155 219  45  93 197 160  29 177 276
-#&gt; [52] 223  88  99  91  83 206  77   6 219</pre>
+<pre >#&gt;  [1]  97 169   6  82 200  34  66 144 240 264  91 211  31 193 118 275 198
+#&gt; [18] 225 177 160  37  39 129 146 209   6 218  33  65 133  59   6 171  46
+#&gt; [35] 268 222 296 138  88 156 124 293 300 285 106 241 161 136  93  17  71
+#&gt; [52]  91 141 213 103 268 141 126  17 163</pre>
 
 <pre class = 'prettyprint lang-r'>sum(duplicated(muestra))</pre>
 
@@ -996,7 +996,7 @@ muestra</pre>
 
 <pre class = 'prettyprint lang-r'>muestra[duplicated(muestra)]</pre>
 
-<pre >#&gt; [1]  82 191 191   1  77 219</pre>
+<pre >#&gt; [1]   6   6  91 268 141  17</pre>
 
 </article></slide><slide class=''><hgroup><h2>Ejercicios</h2></hgroup><article  id="ejercicios-7" class="smaller build">
 
