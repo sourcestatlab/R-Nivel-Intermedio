@@ -121,7 +121,6 @@ dedad <- cut(sdata$edad, breaks = c(0,18,40,65,max(sdata$edad)),
              labels = c("menor a 18", "De 18 a 40", "De 40 a 65", "mayor a 65"))
 table(dedad)
 
-
 # muestras aleatorias
 # con reemplazamiento
 muestra <- sample(sdata$edad,size = 500,replace = TRUE)
