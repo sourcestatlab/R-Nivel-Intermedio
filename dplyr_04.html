@@ -154,6 +154,41 @@ devtools::install_github(&quot;hadley/dplyr&quot;)</pre>
 
 <pre class = 'prettyprint lang-r'>library(dplyr)</pre>
 
+</article></slide><slide class=''><hgroup><h2>Diferencias entre tbl_df &amp; dataframe</h2></hgroup><article  id="diferencias-entre-tbl_df-dataframe" class="smaller ">
+
+<p>Con la finalidad de mejorar la velocidad en el procesamiento de datos, <code>dplyr</code> trae consigo una nueva estructura tabular denominada <code>tbl_df</code> (<em>tables dataframes</em>). Las principales diferencias respecto a los dataframes son:</p>
+
+<ul>
+<li>Cambia la forma de mostrar los datos sin alterar la estructura subyacente.</li>
+<li>Son estructuras entre 20X y 100X veces más rápidas realizando operaciones.</li>
+<li>Se elimina el uso repetitivo del objeto para acceder a sus columnas.</li>
+<li>Permite la utilización de un código más limpio junto al operador <strong>magrittr</strong> <code>%&gt;%</code></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Los 5 verbos y su significado</h2></hgroup><article  id="los-5-verbos-y-su-significado" class="smaller ">
+
+<p>El paquete <code>dplyr</code> cuenta con 5 funciones claves dentro de la manipulación de datos, también llamados <em>verbos</em>:</p>
+
+<h3>select()</h3>
+
+<p>Devuelve un subconjunto de columnas.</p>
+
+<h3>filter()</h3>
+
+<p>Devuelve un subconjunto de filas.</p>
+
+<h3>arrange()</h3>
+
+<p>Reordena las filas de acuerdo a variables simples o múltiples.</p>
+
+<h3>mutate()</h3>
+
+<p>Agrega columnas a una tabla existente.</p>
+
+<h3>summarise()</h3>
+
+<p>Realiza cálculos agregados por grupos.</p>
+
 </article></slide><slide class=''><hgroup><h2>Preguntas</h2></hgroup><article  id="preguntas" class="smaller ">
 
 <p align="center">
