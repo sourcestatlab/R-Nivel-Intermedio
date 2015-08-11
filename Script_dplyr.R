@@ -31,5 +31,13 @@ class(hflights)
 
 
 
+devtools::install_github("trestletech/shinyAce")
+devtools::install_github("swarm-lab/editR")
 
+install.packages(c("shiny", "shinyFiles", "shinyBS", "rmarkdown", "knitr"), dependencies=TRUE)
+library(devtools)
+install_github("trestletech/shinyAce")
+install_github("ebailey78/shinyBS")
+
+editR::editR("dplyr_04.Rmd")
 
