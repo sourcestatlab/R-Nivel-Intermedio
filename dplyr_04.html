@@ -165,6 +165,11 @@ devtools::install_github(&quot;hadley/dplyr&quot;)</pre>
 <li>Permite la utilización de un código más limpio junto al operador <strong>magrittr</strong> <code>%&gt;%</code></li>
 </ul>
 
+<p>Exploremos los datos que usaremos a lo largo de la sesión:</p>
+
+<pre class = 'prettyprint lang-r'>flights
+class(flights)</pre>
+
 </article></slide><slide class=''><hgroup><h2>Los 5 verbos y su significado</h2></hgroup><article  id="los-5-verbos-y-su-significado" class="smaller ">
 
 <p>El paquete <code>dplyr</code> cuenta con 5 funciones claves dentro de la manipulación de datos, también llamados <em>verbos</em>:</p>
@@ -188,6 +193,20 @@ devtools::install_github(&quot;hadley/dplyr&quot;)</pre>
 <h3>summarise()</h3>
 
 <p>Realiza cálculos agregados por grupos.</p>
+
+</article></slide><slide class=''><hgroup><h2>Select</h2></hgroup><article  id="select-1" class="smaller ">
+
+<h3>Seleccionando por nombres y posición</h3>
+
+<p>Para seleccionar columnas de nuestro interés usaremos <code>select</code>. Su sintaxis es simple y limpia:</p>
+
+<pre class = 'prettyprint lang-r'>select(datos, var1, var2)</pre>
+
+<pre class = 'prettyprint lang-r'>select(hflights, Origin, Dest)</pre>
+
+<p>Una forma equivalente a seleccionar las columnas por sus nombres ocurre cuando seleccionamos las columnas por su posición:</p>
+
+<pre class = 'prettyprint lang-r'>select(hflights, 14, 15)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Preguntas</h2></hgroup><article  id="preguntas" class="smaller ">
 
