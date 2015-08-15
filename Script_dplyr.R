@@ -11,33 +11,34 @@ if (packageVersion("devtools") < 1.6) {
 devtools::install_github("hadley/lazyeval")
 devtools::install_github("hadley/dplyr")
 
-# Instalamos librerias de datos
-library(hflights)
+# Cargamos la informacion necesaria
 
-# Librerias
-library(dplyr)
-library(hflights)
+hflights <- tbl_df(read.csv("hflights.csv", stringsAsFactors = FALSE))
 
-# Visualizamos la informacion
-data(package="hflights")
-hflights
-dim(hflights)
-class(hflights)
+hflights_db <- src_sqlite("hflights.sqlite3", create = TRUE)
 
-# Convertimos en table dataframe
-hflights <- tbl_df(hflights)
-dim(hflights)
-class(hflights)
+copy_to(hflights_db, as.data.frame(flights), name = "flights", 
+        indexes = list(c("date", "hour"), "plane", "dest", "arr"), temporary = FALSE)
+copy_to(hflights_db, as.data.frame(weather), name = "weather", 
+        indexes = list(c("date", "hour")), temporary = FALSE)
+copy_to(hflights_db, as.data.frame(airports), name = "airports", 
+        indexes = list("iata"), temporary = FALSE)
+copy_to(hflights_db, as.data.frame(planes), name = "planes", 
+        indexes = list("plane"), temporary = FALSE)
 
+flights_db <- hflights_db %>% tbl("flights")
+weather_db <- hflights_db %>% tbl("weather")
+planes_db <- hflights_db %>% tbl("planes")
+airports_db <- hflights_db %>% tbl("airports")
 
+## Operador magrittr
 
-devtools::install_github("trestletech/shinyAce")
-devtools::install_github("swarm-lab/editR")
+iris %>% head
 
-install.packages(c("shiny", "shinyFiles", "shinyBS", "rmarkdown", "knitr"), dependencies=TRUE)
-library(devtools)
-install_github("trestletech/shinyAce")
-install_github("ebailey78/shinyBS")
+iris %>% tail(5)
 
-editR::editR("dplyr_04.Rmd")
+c(1, 2, 3, NA) %>% mean()
+c(1, 2, 3, NA) %>% mean(na.rm = TRUE)
+iris %>% mutate(dim=Sepal.Length*Sepal.Width) %>% filter(!is.na(dim)) %>% group_by(Species) %>%summarise(avg=mean(dim), sd=sd(dim)) 
+
 
